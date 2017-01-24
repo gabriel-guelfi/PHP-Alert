@@ -1,6 +1,6 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script src="<?php echo $root_uri; ?>/teste/phpalert/alert.js"></script>
-<link rel="stylesheet" href="<?php echo $root_uri; ?>/teste/phpalert/alert.css">
+<script src="<?php echo $uri; ?>/phpalert/alert.js"></script>
+<link rel="stylesheet" href="<?php echo $uri; ?>/phpalert/alert.css">
 <?php
 // Shows all alerts setted in dialogs to user.(See Alert::add method).
 if (!empty($_SESSION['alerts'])):
@@ -8,7 +8,7 @@ if (!empty($_SESSION['alerts'])):
     foreach ($_SESSION['alerts'] as $alert):
         ?>
         <div class="alert alert-<?php echo $alert->type; ?>" data-index="<?php echo $i; ?>">
-            <img src="<?php echo $root_uri; ?>/teste/phpalert/img/alert-<?php echo $alert->type; ?>.png">
+            <img src="<?php echo $uri; ?>/phpalert/img/alert-<?php echo $alert->type; ?>.png">
             <span title="Close alert" class="close-alert">[X]</span>
             <p><?php echo $alert->msg; ?></p>
         </div>

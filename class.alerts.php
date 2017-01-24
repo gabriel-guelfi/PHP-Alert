@@ -2,13 +2,16 @@
 
 class Alerts {
 
-    // Construct Method: Simply initiate a session.
-    public function __construct() {
+    private $uri;
+    
+    // Construct Method. Initiate a session and register root uri for the gadget.
+    public function __construct($uri) {
         session_start();
+        $this->uri = $uri;
     }
 
     // Register a new alert in the queue.
-    public static function add($msg, $type = "warning") {
+    public function add($msg, $type = "warning") {
         $_SESSION['alerts'][] = (object) array(
                     "type" => $type,
                     "msg" => $msg
@@ -16,8 +19,8 @@ class Alerts {
     }
 
     // Show all alerts registered in the queue.
-    public static function show() {
-        $root_uri = (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/';
+    public function show() {
+        $uri = $this->uri;
         
         include __DIR__ . "/alert.php";
 
