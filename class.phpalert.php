@@ -1,6 +1,6 @@
 <?php
 
-class Alerts {
+class PHPAlert {
 
     private $uri;
     
