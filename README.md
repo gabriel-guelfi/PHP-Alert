@@ -11,9 +11,10 @@ Example:
 
 ```
 #!php
-
+<?php
 include $_SERVER["DOCUMENT_ROOT"]."/mysite/gadgets/phpalert/class.phpalert.php";
 $alert = new PHPAlert("http://www.mysite.com/gadgets");
+?>
 ```
 
 ### Setting up an alert ###
@@ -24,8 +25,9 @@ Example:
 
 ```
 #!php
-
+<?php
 $alert->add("Hello World", "warning"); // You can add as many alerts you need. The gadget will create a queue with them.
+?>
 ```
 Alert types supported:
 
@@ -41,8 +43,9 @@ Example:
 
 ```
 #!php
-
+<?php
 $alert->show();
+?>
 ```
 It will show the alerts registered in the queue, one by one. Each alert shown, takes 3 seconds to disappear automatically, then the next alert in queue will show up. And so on...
 
