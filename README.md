@@ -75,7 +75,7 @@ Done and done! Now we just need to add our custom type alert, passing the type n
 ```
 #!php
 <?php
-$alert->add("An alert message with blued custom type", "my-alert-type"); // Note that the name of alert type is the same that the name of our CSS class, without "alert-".
+$alert->add("An alert message with blued custom type", "my-alert-type"); // Note that the name of alert type is the same that of our CSS class, but without "alert-".
 $alert->show();
 ?>
 ```
