@@ -65,7 +65,7 @@ First of all, we open the file named "alert.css" on PHPAlert's root and put the 
     border:2px solid #000099;
 }
 ```
-Now we take a PNG image we want to represent our custom alert type and put it inside "/img" folder, which is located at the root PHPAlert directory, with the same name of CSS class that we created above, preceded by "alert-". For example:
+Now we take a PNG image we want to represent our custom alert type and put it inside "/img" folder, which is located at the root PHPAlert directory, with the same name of CSS class that we created above, but without the first "alert-". For example:
 
 ![alert-blue.png](http://blog.gabrielguelfi.com.br/wp-content/uploads/2017/01/alert-blue-300x300.png)
 *... /phpalert/img/my-alert-type.png*
