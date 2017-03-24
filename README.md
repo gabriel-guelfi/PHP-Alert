@@ -2,6 +2,8 @@
 
 Easily implement user friendly alerts in your PHP projects with this gadget.
 
+![Screenshot from 2017-03-24 20-07-48.png](https://bitbucket.org/repo/eza8aa/images/1883293778-Screenshot%20from%202017-03-24%2020-07-48.png)
+
 
 ### How do I get set up? ###
 
@@ -48,6 +50,45 @@ $alert->show();
 ?>
 ```
 It will show the alerts registered in the queue, one by one. Each alert shown, takes 3 seconds to disappear automatically, then the next alert in queue will show up. And so on...
+
+
+
+## Customization ##
+** How do i create my own alert types? **
+
+First of all, we open the file named "alert.css" on PHPAlert's root and put the CSS code bellow inside it:
+```
+#!css
+.alert-my-alert-type{
+    background-color:#C7C7FF;
+    color:#000099;
+    border:2px solid #000099;
+}
+```
+Now we take a PNG image we want to represent our custom alert type and put it inside "/img" folder, which is located at the root PHPAlert directory, with the same name of CSS class that we created above, preceded by "alert-". For example:
+
+![alert-blue.png](http://blog.gabrielguelfi.com.br/wp-content/uploads/2017/01/alert-blue-300x300.png)
+*... /phpalert/img/my-alert-type.png*
+
+Done and done! Now we just need to add our custom type alert, passing the type name("my-alert-type"), and show it to viewer:
+
+```
+#!php
+<?php
+$alert->add("An alert message with blued custom type", "my-alert-type"); // Note that the name of alert type is the same that the name of our CSS class, without "alert-".
+$alert->show();
+?>
+```
+
+We shall see something like this:
+
+![Screenshot from 2017-03-24 20-30-26.png](https://bitbucket.org/repo/eza8aa/images/3838715810-Screenshot%20from%202017-03-24%2020-30-26.png)
+
+
+=]
+
+
+
 
 ### Who am i? ###
 
