@@ -2,6 +2,8 @@
 
 Easily implement user friendly alerts in your PHP projects with this gadget.
 
+PHPAlert Gadget is an Open Source, Free software. And is under the terms and conditions of GNU/GPL license. You not only have permission to distribute it, but is also encouraged to. But read the license, before. A copy of the GNU/GPL license is attached with the source code, within the root folder.
+
 ![Screenshot from 2017-03-24 20-07-48.png](https://bitbucket.org/repo/eza8aa/images/1883293778-Screenshot%20from%202017-03-24%2020-07-48.png)
 
 

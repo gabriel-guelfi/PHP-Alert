@@ -1,3 +1,4 @@
+<?php
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 //                                                                                                       //
 //                                          PHPAlert Gadget                                              //
@@ -32,37 +33,25 @@
 //          to the terms and conditions explicit within the license, mentioned above.                    //
 //                                                                                                       //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+?>
 
-// Set a timeout to close an alert automatically.
-function timeout(alert) {
-    setTimeout(function () {
-        alert.find('.close-alert').click();
-    }, 3000);
-}
-
-// Close an alert and show the next one, if it is there.
-function closeAlert(alert) {
-    alert.fadeOut(300, function () {
-        var index = alert.attr('data-index');
-        alert.remove();
-
-        if (jQuery('.alert').length > 0) {
-            var next = jQuery('.alert[data-index="' + (parseInt(index) + 1).toString() + '"]');
-            next.show();
-
-            timeout(next);
-        }
-    });
-}
-
-jQuery(document).ready(function () {
-    // Bind function closeAlert() to the click event of close buttons in alerts.
-    jQuery('.close-alert').click(function () {
-        closeAlert(jQuery(this).parent());
-    });
-
-    var first = jQuery('.alert[data-index="0"]');
-    first.show();
-    // Call closeAlert(), for the first alert in queue, after 3 seconds since the document is ready.
-    timeout(first);
-});
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="<?php echo $uri; ?>/phpalert/alert.js"></script>
+<link rel="stylesheet" href="<?php echo $uri; ?>/phpalert/alert.css">
+<?php
+// Shows all alerts setted in dialogs to user.(See Alert::add method).
+if (!empty($_SESSION['alerts'])):
+    $i = 0;
+    foreach ($_SESSION['alerts'] as $alert):
+        ?>
+        <div class="alert alert-<?php echo $alert->type; ?>" data-index="<?php echo $i; ?>">
+            <img src="<?php echo $uri; ?>/phpalert/img/alert-<?php echo $alert->type; ?>.png">
+            <span title="Close alert" class="close-alert">[X]</span>
+            <p><?php echo $alert->msg; ?></p>
+        </div>
+        <?php
+        unset($_SESSION['alerts'][$i]);
+        $i++;
+    endforeach;
+endif;
+?>
