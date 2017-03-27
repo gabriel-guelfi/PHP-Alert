@@ -13,8 +13,7 @@ Simply put "phpalert" folder in any directory within your project, include the P
 
 Example:
 
-```
-#!php
+```php
 <?php
 include $_SERVER["DOCUMENT_ROOT"]."/mysite/gadgets/phpalert/class.phpalert.php";
 $alert = new PHPAlert("http://www.mysite.com/gadgets");
@@ -27,8 +26,7 @@ With the PHPAlert object settled, call add() method, passing alert's message and
 
 Example:
 
-```
-#!php
+```php
 <?php
 $alert->add("Hello World", "warning"); // You can add as many alerts you need. The gadget will create a queue with them.
 ?>
@@ -45,8 +43,7 @@ Call method show().
 
 Example:
 
-```
-#!php
+```php
 <?php
 $alert->show();
 ?>
@@ -59,8 +56,7 @@ It will show the alerts registered in the queue, one by one. Each alert shown, t
 ** How do i create my own alert types? **
 
 First of all, we open the file named "alert.css" on PHPAlert's root and put the CSS code bellow inside it:
-```
-#!css
+```css
 .alert-my-alert-type{
     background-color:#C7C7FF;
     color:#000099;
@@ -74,8 +70,7 @@ Now we take a PNG image we want to represent our custom alert type and put it in
 
 Done and done! Now we just need to add our custom type alert, passing the type name("my-alert-type"), and show it to viewer:
 
-```
-#!php
+```php
 <?php
 $alert->add("An alert message with blued custom type", "my-alert-type"); // Note that the name of alert type is the same of our CSS class, but without "alert-".
 $alert->show();
