@@ -39,7 +39,7 @@ class PHPAlert {
     private $uri;
     
     // Construct Method. Initiate a session and register root uri for the gadget.
-    public function __construct($uri) {
+    public function __construct($uri = "") {
         session_start();
         $dir = end(explode("/",__DIR__));
         $this->uri = (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] != "off" ? "https" : "http")."://".$_SERVER["SERVER_NAME"].$uri."/".$dir."/";
