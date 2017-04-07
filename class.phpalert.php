@@ -56,7 +56,7 @@ class PHPAlert {
     public function show() {
         $uri = $this->uri;
         
-        include __DIR__ . "/alert.php";
+        include __DIR__ . "/view.alert.php";
 
         if (empty($_SESSION['alerts']))
             unset($_SESSION['alerts']);
