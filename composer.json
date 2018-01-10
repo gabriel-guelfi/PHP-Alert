@@ -1,5 +1,4 @@
 {
-  "package": {
        "name": "gabriel-guelfi/php-alert",
        "version": "master",
        "source": {
@@ -12,5 +11,4 @@
           "/class.phpalert.php"
         ]
       }
-    }
 }
