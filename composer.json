@@ -1,0 +1,16 @@
+{
+  "package": {
+       "name": "gabriel-guelfi/php-alert",
+       "version": "master",
+       "source": {
+        "url": "https://github.com/gabriel-guelfi/PHP-Alert.git",
+        "type": "git",
+        "reference": "master"
+       },
+       "autoload": {
+        "classmap" : [
+          "/class.phpalert.php"
+        ]
+      }
+    }
+}
