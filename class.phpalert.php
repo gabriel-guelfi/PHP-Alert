@@ -41,7 +41,7 @@ class PHPAlert {
     // Construct Method. Initiate a session and register root uri for the gadget.
     public function __construct() {
         session_start();
-        $this->uri = $_SERVER['SERVER_NAME'].str_replace($_SERVER["DOCUMENT_ROOT"], "", __DIR__).'/';
+        $this->uri = (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] != "off" ? "https" : "http")."://".$_SERVER['SERVER_NAME'].str_replace($_SERVER["DOCUMENT_ROOT"], "", __DIR__).'/';
     }
 
     // Register a new alert in the queue.
