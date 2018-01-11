@@ -1,6 +1,6 @@
-{
+-{
        "name": "gabriel-guelfi/php-alert",
-       "version": "1.0.0",
+       "version": "dev-master",
        "source": {
         "url": "https://github.com/gabriel-guelfi/PHP-Alert.git",
         "type": "git",
